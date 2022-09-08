@@ -567,17 +567,9 @@ void parseReceivedCommand(){		//INTERRUPTS SHOULD BE DISABLED IN HERE!!!
 			//_delay_ms(1000);
 			forceReset(ERR_ADMIN_DEFAULT_REQUEST);	
 		}else{
-		USART_transmits("\r\nAT+CMGS=\"");
-		wdt_reset();
-		//_delay_ms(1000);
-		USART_ntransmits((char* )adminNo,10);
-		USART_transmits("\"\rLATHOS KWDIKOS:");
-		_delay_ms(15);
-		USART_transmitc(0x1A);
-		SET_BIT(mainF3,SMS_READY);
-		wdt_reset();
-		
-	}
+			SET_BIT(mainF3,SMS_READY);
+			wdt_reset();
+		}
 	
 	CLEAR_BIT(mainF3,MASTER_SMS);
 	CLEAR_BIT(mainF3,NEW_SMS);
@@ -806,7 +798,7 @@ void stateReport(){//NEEDS INTERRUPTS ENABLED
 	}
 	cli();
 	if(GET_BIT(mainFP1,GSM_REBOOT_FLAG)){
-		USART_transmits("GSM REBOOT\n");
+		//USART_transmits("GSM REBOOT\n");
 		CLEAR_BIT(mainFP1,GSM_REBOOT_FLAG);
 		SET_BIT(mainF1,EEPROM_UPDATE_PENDING);
 	}
@@ -886,28 +878,28 @@ cli();
 	switch (errCode)
 	{
 		case ERR_GSM_INIT:
-		//USART_transmits("gsm init error");
-		indLEDCycleTime = 10;
-		indLEDOnTime = 5; 
-		break;
+			//USART_transmits("gsm init error");
+			indLEDCycleTime = 10;
+			indLEDOnTime = 5; 
+			break;
 		case ERR_POWER_DOWN:
-		indLEDCycleTime = 20;
-		indLEDOnTime = 10;
-		//USART_transmits("power down reset");
-		break;
+			indLEDCycleTime = 20;
+			indLEDOnTime = 10;
+			//USART_transmits("power down reset");
+			break;
 		case ERR_ADMIN_RESET_REQUEST:
-		indLEDCycleTime = 30;
-		indLEDOnTime = 15;
-		//USART_transmits("admin reset");
-		break;
+			indLEDCycleTime = 30;
+			indLEDOnTime = 15;
+			//USART_transmits("admin reset");
+			break;
 		case ERR_GSM_REBOOT:
-		cli();
-		indLEDCycleTime = 40;
-		indLEDOnTime = 20;
-		SET_BIT(mainFP1,GSM_REBOOT_FLAG);
-		EEPROM_update();
+			cli();
+			indLEDCycleTime = 40;
+			indLEDOnTime = 20;
+			SET_BIT(mainFP1,GSM_REBOOT_FLAG);
+			EEPROM_update();
 		case ERR_ADMIN_DEFAULT_REQUEST:
-		USART_transmits("\nok");
+			USART_transmits("\nok");
 		default:
 		indLEDCycleTime = 50;
 		indLEDOnTime = 250;
