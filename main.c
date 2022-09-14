@@ -272,7 +272,7 @@ void init(){
 	//zero cross monitor setup
 	PCICR |= (1<<PCIE2);
 	PCMSK2 |= (1<<PCINT20);
-sei(); //!!!!!!!!!!!!!!!!!!!!!!!!!!
+	sei(); //!!!!!!!!!!!!!!!!!!!!!!!!!!
 	if(GSM_init()==0){
 		//watchdog setup to reset early
 		wdt_reset();
