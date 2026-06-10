@@ -38,6 +38,16 @@ Existing deployed hardware remains the target.
 - Treat regressions as dangerous.
 - Keep generated field-candidate artifacts traceable.
 
+## EEPROM policy for maintenance reflashes
+
+Maintenance reflashes are allowed to erase EEPROM.
+
+After flashing, devices are expected to be reprovisioned.
+
+EEPROM backward compatibility is not a current requirement for this rescue branch.
+
+EEPROM layout may still be documented for diagnostics, but preserving existing EEPROM contents is not a release goal.
+
 ## Out of scope unless explicitly started later
 
 - hardware redesign
