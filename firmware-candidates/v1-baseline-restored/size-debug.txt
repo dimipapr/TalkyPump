@@ -1,0 +1,2 @@
+   text	   data	    bss	    dec	    hex	filename
+   6636	    538	    231	   7405	   1ced	artifacts/v1-baseline-restored/Debug/TalkyPump.elf

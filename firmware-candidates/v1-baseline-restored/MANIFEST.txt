@@ -1,0 +1,44 @@
+Firmware candidate: v1-baseline-restored
+Source state: restored project baseline before Linux-native build changes
+Build origin: Atmel Studio project TalkyPump.cproj
+
+Target:
+  MCU: ATmega168
+  Modem: SIM800L
+  Hardware: existing TalkyPump v1 board
+
+Configurations preserved:
+  Debug:
+    define: DEBUG
+    optimization: -O1
+  Release:
+    define: NDEBUG
+    optimization: -Os
+
+Important compiler options from TalkyPump.cproj:
+  -mmcu=atmega168
+  -funsigned-char
+  -funsigned-bitfields
+  -fpack-struct
+  -fshort-enums
+  -Wall
+  -lm
+
+Artifacts preserved outside normal git tree:
+  Debug/TalkyPump.eep
+  Debug/TalkyPump.elf
+  Debug/TalkyPump.hex
+  Debug/TalkyPump.lss
+  Debug/TalkyPump.map
+  Debug/TalkyPump.srec
+  Release/TalkyPump.eep
+  Release/TalkyPump.elf
+  Release/TalkyPump.hex
+  Release/TalkyPump.lss
+  Release/TalkyPump.map
+  Release/TalkyPump.srec
+
+Notes:
+  Production configuration is currently unknown.
+  Do not assume Debug or Release is the field-proven production binary without confirmation.
+  Treat freed flash/RAM as safety margin, not feature budget.
