@@ -1,0 +1,34 @@
+# Product overview
+
+## What TalkyPump is
+
+TalkyPump is a GSM remote monitoring and control tool for existing seal-in irrigation pump installations.
+
+It connects to the existing relay control circuit and works alongside the local manual controls. It does not replace the pump control panel, bypass interlocks, or replace overload and electrical protection devices.
+
+TalkyPump acts as an additional authorized remote operator for the existing installation.
+
+## Problem addressed
+
+Irrigation pump installations are often unattended and physically distant from the farmer.
+
+This creates two practical problems.
+
+### Unplanned events
+
+Failures and state changes can happen at any time. Examples include mains power loss, power returning, or the pump stopping because the existing control/protection circuit has dropped out.
+
+Without remote monitoring, there is a blind interval between the event and the farmer becoming aware of it. During that time, irrigation may be interrupted, the exact time of failure may be unknown, and the farmer may need repeated visits just to check whether the mains power has recovered.
+
+### Simple control actions
+
+Some visits are not caused by faults. They are only needed because someone has to press a local start or stop button at the installation.
+
+## Product purpose
+
+TalkyPump reduces the cost of distance from unattended irrigation pump installations.
+
+It does this in two ways:
+
+- **monitoring**: reducing the time between an unplanned event and farmer awareness
+- **control**: avoiding field visits for simple authorized start/stop actions
