@@ -32,3 +32,29 @@ It does this in two ways:
 
 - **monitoring**: reducing the time between an unplanned event and farmer awareness
 - **control**: avoiding field visits for simple authorized start/stop actions
+
+## High-level functionality
+
+TalkyPump provides four main product functions:
+
+### Pump monitoring
+
+TalkyPump monitors the pump/control-circuit state so the farmer can know whether the installation appears to be running or stopped.
+
+### Mains monitoring
+
+TalkyPump monitors mains-power availability through the existing installation signal.
+
+When mains loss or recovery is detected, the event should be reportable to the farmer.
+
+### Remote pump control
+
+TalkyPump allows authorized users to send remote start and stop commands to the existing relay control circuit.
+
+These commands act in parallel with the local manual controls and do not replace the existing control or protection system.
+
+### User access control
+
+TalkyPump restricts control actions to authorized users.
+
+Unauthorized callers or message senders are not be able to start or stop the pump.
